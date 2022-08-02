@@ -1,11 +1,12 @@
-version: "3"
+version: '3'
 services:
   node-app:
     build: .
     ports:
-      - "3000:3000"
-    volumes:
-      - ./:/app
-      - /app/node_modules
+      - "3000:${PORT}"
+  mongo:
+    image: mongo
     environment:
-      - PORT=3000
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=secret
+    
