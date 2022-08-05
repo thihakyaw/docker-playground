@@ -9,5 +9,17 @@ services:
       args:
         NODE_ENV: production
     environment:
-      - APP_ENV=prod
+      - APP_ENV=${APP_ENV}
+      - PORT=${PORT}
+      - MONGO_IP=${MONGO_IP}
+      - MONGO_PORT=${MONGO_PORT}
+      - MONGO_USERNAME=${MONGO_USERNAME}
+      - MONGO_PASSWORD=${MONGO_PASSWORD}
+      - REDIS_URL=${REDIS_URL}
+      - REDIS_PORT=${REDIS_PORT}
+      - SESSION_SECRET=${SESSION_SECRET}
     command: npm run start
+  mongo:
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASSWORD}
