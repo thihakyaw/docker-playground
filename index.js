@@ -42,7 +42,7 @@ mongoose
 app.use(express.json());
 
 app.get("/api/v1", (req, res) => {
-    res.send("<h1>Hi there. It is me.</h1>");
+    res.send("<h1>Hi there. It is me. It is alpha 134.</h1>");
     console.log("Yes it ran");
 })
 
